@@ -1,0 +1,25 @@
+Low-level features: 
+  DSIFT (128D, vlfeat)
+  dense sampling at multiple scales
+  smapling step=8 pixels
+  patch size=32 pixels
+  resolution pyramid with 5 levels, obtained by subsampling using bilinear interpolation (factor of 0.707)
+  dimensionality reduced to 80 by PCA (trained on 1M samples from the "trainval" set of PASCAL VOC 2007)
+
+GMM with default parameters (trained on 1M samples from the "trainval" set)
+  the differnce with the old implementation is that I added a Dirichlet prior on the weights (parameter "alpha"). This has a similar effect as the "nasty" trick of updating the mixture weights by using only the samples with a non-zero posterior
+
+FV
+  gradients w.r.t the mean and variances
+  pnorm=2.0
+  alpha=0.5
+
+Linear SVMs trained using SGD (León Bottou's code)
+  hinge loss
+  20 SGD iterations
+  lambda = 1e-3
+  
+
+Results on VOC 2007 (on the "test" set), using 64 Gaussians: 55.2% mAP
+  
+  

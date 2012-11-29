@@ -1,0 +1,10 @@
+
+# Data folders #
+###################
+fisher_exp
+fisher_net_exp
+fisher_net_voc
+tarball
+
+
+*.asv
